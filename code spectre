@@ -7,20 +7,6 @@ import statistics
 de Michelson dans le but d'etudier la transformée de Fourier et de comprendre
 comment la resolution spectrale est déterminée.
 """
-open('test2_Laser_Vrai_x.txt', 'r')
-open('test2_Laser_Vrai_y.txt', 'r')
-open('test2_Laser_Vrai_z.txt', 'r')
-
-open('test3_lumiereblanche_x.txt', 'r')
-open('test3_lumiereblanche_y.txt', 'r')
-open('test3_lumiereblanche_z.txt', 'r')
-
-open('RepriseLumiereBlanche_y.txt', 'r')
-open('RepriseLumiereBlanche_z.txt', 'r')
-
-open('HENE_2_y.txt', 'r')
-open('HENE_2_z.txt', 'r')
-
 
 
 def interpolation(filename,minx,maxx,nb_points):

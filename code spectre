@@ -7,6 +7,20 @@ import statistics
 de Michelson dans le but d'etudier la transformée de Fourier et de comprendre
 comment la resolution spectrale est déterminée.
 """
+open('test2_Laser_Vrai_x.txt', 'r')
+open('test2_Laser_Vrai_y.txt', 'r')
+open('test2_Laser_Vrai_z.txt', 'r')
+
+open('test3_lumiereblanche_x.txt', 'r')
+open('test3_lumiereblanche_y.txt', 'r')
+open('test3_lumiereblanche_z.txt', 'r')
+
+open('RepriseLumiereBlanche_y.txt', 'r')
+open('RepriseLumiereBlanche_z.txt', 'r')
+
+open('HENE_2_y.txt', 'r')
+open('HENE_2_z.txt', 'r')
+
 
 
 def interpolation(filename,minx,maxx,nb_points):
@@ -147,10 +161,23 @@ dl = 0.500*0.500*df*1000 # resolution autour de 0.500 µm en nm
 plotCombinedFigures(x,y,w,s,left=250, right=1500, title="Spectre lumiere blanche, resolution {0:0.2f} nm".format(dl))
 
 moyenne_1 = []
+liste = []
 
-for i in abs(s):
+x1 = w*1000
+y1 = abs(s)
+x1 = x1.tolist()
+y1 = y1.tolist()
+
+
+for i in x1:
     if i >= 630 and i <= 715 :
-        moyenne_1.append(i)
+        liste.append(x1.index(i))
+
+for h in liste:
+    for k in y1:
+        j = y1.index(k)
+        if h == j:
+            moyenne_1.append(k)
 
 mean = statistics.mean(moyenne_1)
 print(mean)
@@ -184,11 +211,23 @@ dl = 0.500*0.500*df*1000 # resolution autour de 0.500 µm en nm
 plotCombinedFigures(x,y,w,s,left=250, right=1500, title="Spectre lumiere blanche, resolution {0:0.2f} nm".format(dl))
 
 moyenne_1 = []
+liste = []
+
+x1 = w*1000
+y1 = abs(s)
+x1 = x1.tolist()
+y1 = y1.tolist()
 
 
-for i in abs(s):
+for i in x1:
     if i >= 630 and i <= 715 :
-        moyenne_1.append(i)
+        liste.append(x1.index(i))
+
+for h in liste:
+    for k in y1:
+        j = y1.index(k)
+        if h == j:
+            moyenne_1.append(k)
 
 mean = statistics.mean(moyenne_1)
 print(mean)
